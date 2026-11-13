@@ -48,3 +48,17 @@
 1. 개선본 PDF 5개를 이 PR 브랜치에 올린다. 파일명 끝에 `_v2`를 붙이고 원본은 지우지 않는다. 원본 교체는 만복이 합격 판정한 뒤에 한다.
 2. `ai_todo/KEYRING_회신표_PDF1to5_20261115.md`에 항목 번호별로 "조치함 / 반박 / 보류"와 근거를 적는다. 반박은 항목 번호, 근거 URL, KST 열람 시각, 15단어 이내 인용이 있어야 한다.
 3. 레지스트리(csv, db)는 건드리지 않는다.
+
+## 4. 추가 요청: git_trend 3개 PDF 재렌더 (11/14 06:55 추가)
+- 대상: `git_trend/1113_Git_trend_#1_meta_astryx.pdf`, `#2_addyosmani_agent_skills.pdf`, `#3_openai_codex_security.pdf`
+- 문제: 3개 모두 1쪽 전체의 한글이 깨져(글꼴 누락) 내용을 읽을 수 없음. 영문·숫자만 읽힘. HMYS #1과 같은 결함.
+- 요청: 글꼴을 포함해 다시 렌더하고, 렌더 뒤 한글이 보이는지 직접 열어 확인. 파일명 끝에 `_v2`.
+- 만복이 GitHub에서 직접 확인한 사실(2026-11-14 06:50 KST, `gh api`와 README 열람)이다. 이것과 PDF가 맞는지 대조해서 출처를 달고, 다르면 정정할 것.
+
+| 저장소 | 실재 | 확인한 값 | 대조 요청 |
+|---|---|---|---|
+| meta/astryx | 있음 | 별 27,348, MIT, README '150+ accessible components', 'React 19+ and StyleX' | #1의 "13,000+"가 무엇의 수치인지(별 수라면 27,348과 다름, 13,000+는 openai/codex-security 별 수 13,075와 비슷). 별 수는 조회 시각과 함께 적을 것 |
+| meta/astryx | - | README에서 `npx astryx component --compact` 명령을 찾지 못함 | 이 명령의 출처 URL. 못 찾으면 "미확인" |
+| addyosmani/agent-skills | 있음 | 별 117,114, MIT, README '25 skills', 'installs into 70+ agents', 6단계 DEFINE PLAN BUILD VERIFY REVIEW SHIP, 'Beyonce Rule', 'anti-rationalization tables' | #2의 수치와 일치하는지 확인하고 출처 줄에 README 위치를 적을 것 |
+| openai/codex-security | 있음 | 별 13,075, Apache-2.0, README 'Deep scans', SARIF·JSON·CSV 내보내기, Linear·Jira·GitHub 연동, CLI 명령은 `cs scan` | #3의 "csscan"은 `cs scan`이어야 하는지 확인. SARIF·Jira·Linear 문장에 README 출처를 달 것 |
+- 세 PDF 모두 마지막 항목 "HMYS 5개 영역 적용 가능성"은 제안이다. 사실 문장과 분리해 "제안"으로 표기할 것.
