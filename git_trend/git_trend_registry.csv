@@ -1,0 +1,4 @@
+﻿issue_date,trend_id,repo_name,github_url,stars_today,architecture_summary,pdf_filename
+2026-11-13,1113_Git_trend_#1,meta/astryx,https://github.com/meta/astryx,"+1,830 stars","Meta 8년 실전 검증 13,000+개 앱 구동 AI-Native 디자인 시스템 (React 19+, StyleX, CLI Vibe Tests)",1113_Git_trend_#1_meta_astryx.pdf
+2026-11-13,1113_Git_trend_#2,addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,"+816 stars","Google Chrome 리드 발표 25개 시니어 엔지니어링 스킬셋 (Anti-rationalization 테이블, SDLC 6단계)",1113_Git_trend_#2_addyosmani_agent_skills.pdf
+2026-11-13,1113_Git_trend_#3,openai/codex-security,https://github.com/openai/codex-security,"+643 stars","OpenAI 공식 보안 자동화 도구 (CLI/SDK, 취약점 탐지/검증/자동패치, SARIF/Jira 연동)",1113_Git_trend_#3_openai_codex_security.pdf
