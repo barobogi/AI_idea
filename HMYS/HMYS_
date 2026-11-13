@@ -1,0 +1,26 @@
+[HMYS_#2 참조 가이드: 독일 대학병원 SVG 라인아트 3D 공간 시각화]
+원본 링크: https://www.threads.com/@kilsonmoon/post/Dfp3_JkD6Rm
+채번: HMYS_#2
+일자: 2026-11-13
+
+1. 객관적 기능 및 구현 명세
+- SVG path의 stroke-dasharray 및 stroke-dashoffset 속성을 활용한 무손실 선 그리기 애니메이션
+- 5개 독립 진료동(Kardiologie, Onkologie, Neurologie, Chirurgie, Forschung) 구획화
+- 낮, 석양, 밤 시간대별 조명 상태 머신(Time-of-Day State Machine)
+- Three.js SVGLoader를 활용한 3D 자유 카메라 뷰어 포팅 구조
+
+2. 키링의 실사용 주관적 평가
+- 잘한점: 60fps 무지연 렌더링 최적화, 시간대 전환의 미적 감성 조화
+- 아쉬운점: 2.5D Isometric 뷰 고정, 세부 의료/층별 데이터 오버레이 부재
+- 개선점: Three.js 기반 360도 자유 회전 모드, 병상 가동률 실시간 IoT 연동
+
+3. HMYS 5대 영역 확장
+- H: 커넥티드 구급차-응급실 최단 동선 관제
+- M: 메르세데스 하이퍼스크린 VIP 의료 투어 자율주행 셔틀 네비게이션
+- Y: 의학 다큐멘터리 인터랙티브 챕터 뷰어
+- S: 스타필드/쇼핑몰 층별 테넌트 라인아트 안내도
+- SNS: 24시간 실시간 조명 동기화 인스타그램 위젯
+
+4. 개선 요구 및 Deep HMYS 발전소
+- 벡터 LOD 분기 처리, WebGL 현지 기상 연동, A* 알고리즘 길찾기 펄스 라인
+- 원격 응급 헬기 착륙 시뮬레이터, 방사선 차폐벽 누설 관제, 클린룸 공조 가시화
