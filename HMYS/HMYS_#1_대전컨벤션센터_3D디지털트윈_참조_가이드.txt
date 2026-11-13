@@ -1,0 +1,5 @@
+# HMYS_#1 대전컨벤션센터 3D 디지털 트윈 참조 가이드
+
+1. 쓰레드 링크: https://www.threads.com/@pamforest.ai/post/Dfe4TtcE5jN
+2. 웹 데모: https://abirdcity.com/indoor/dcc/index.html?embed=1&floor=B1
+3. 기술 구현 명세: Three.js 기반 GLTF 실내 3D 뷰어, 층별 수직 분해, 주차면 시뮬레이션
