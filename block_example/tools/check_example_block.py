@@ -195,7 +195,7 @@ def main():
         try:
             t = json.load(open(tp, encoding="utf-8"))
             need = ["agent", "model_or_tool", "block_slot", "started_at_kst", "finished_at_kst", "wall_clock_min",
-                    "active_min", "retries", "steps", "commit_started", "commit_finished"]
+                    "active_min", "read_min", "retries", "steps", "commit_started", "read_confirm_commit", "commit_finished"]
             miss = [k for k in need if k not in t]
             chk("T01-시간 기록 필수키", not miss, "없는 키: " + (", ".join(miss) or "없음"))
         except Exception as e:
