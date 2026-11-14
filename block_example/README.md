@@ -16,12 +16,13 @@ block_example/
   tools/check_example_block.py      측정기 36항목 (표준 라이브러리만, 실제 정점 데이터로 측정)
   tools/khronos_validate.mjs        Khronos glTF 검증기 실행 (npm i gltf-validator 필요)
   templates/timing.json             블록별 시간 기록 양식
+  templates/READ_CONFIRM.md         읽기 확인 10문항(작업 전 필수)
   templates/REPORT.md               보고서 양식
   <에이전트이름>_block/             에이전트가 만드는 결과 (3블록 + timing + evidence + REPORT)
 ```
 
 ## 흐름
-1. 에이전트가 지시서를 읽고 작업 **시작 전에** `timing/STARTED.md`를 커밋한다.
+1. 에이전트가 `timing/STARTED.md`를 커밋하고, **지시서와 3인 연합 가이드 전문을 읽은 뒤** `timing/READ_CONFIRM.md`(10문항)를 커밋한다. 이 시각이 제작 시작 기준이다.
 2. 3개 블록을 만들고 측정기로 확인한다.
 3. PR로 제출한다(병합하지 않음).
 4. 3AI가 측정기를 다시 돌리고, 제미나이가 시각 8항목, 만복이 출처 표본을 본다.

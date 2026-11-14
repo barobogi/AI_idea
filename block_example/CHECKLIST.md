@@ -50,8 +50,9 @@
 - [ ] 이용 조건(공공누리 유형, ODbL 등)을 정확히 적었다
 
 ## 6. 시간 기록 (자동 T01 + 사람 확인)
-- [ ] 작업 시작 전에 `timing/STARTED.md`를 커밋·푸시했다
-- [ ] 블록마다 `timing_<슬롯>.json`을 채웠다(필수 키 전부)
+- [ ] 읽기 시작 전에 `timing/STARTED.md`를 커밋·푸시했다
+- [ ] `GUIDE_3TEAM_BLOCK_TECH_20261114.md` 전문을 읽고 `timing/READ_CONFIRM.md`(10문항)를 커밋·푸시했다(이 시각이 제작 시작 기준)
+- [ ] 블록마다 `timing_<슬롯>.json`을 채웠다(필수 키 전부, `read_min`·`wall_clock_min` 구분)
 - [ ] 처음 통과까지 시간, 측정기 실행 횟수, 중단·재개, 한도 체계를 적었다
 - [ ] 보고서의 시간이 timing 파일과 같다
 
