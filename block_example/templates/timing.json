@@ -1,0 +1,43 @@
+{
+  "agent": "에이전트 이름",
+  "model_or_tool": "사용한 모델·도구와 버전",
+  "block_slot": "26170-B26",
+  "started_at_kst": "2026-11-14T00:00:00+09:00",
+  "finished_at_kst": "2026-11-14T00:00:00+09:00",
+  "read_min": 0,
+  "read_confirm_commit": "READ_CONFIRM.md 커밋 해시",
+  "wall_clock_min": 0,
+  "active_min": 0,
+  "time_to_first_pass_min": 0,
+  "validation_loops": 0,
+  "retries": 0,
+  "parallel_with_other_blocks": false,
+  "steps": {
+    "research_min": 0,
+    "modeling_min": 0,
+    "optimize_min": 0,
+    "validate_min": 0,
+    "other_min": 0
+  },
+  "human_interventions": 0,
+  "interruptions": [
+    {
+      "at_kst": "",
+      "reason": "한도 소진 등",
+      "resumed_at_kst": ""
+    }
+  ],
+  "usage_limit_regime": "예: 일일 한도, 새벽 4시 KST 리셋 / 시간당 N회 등",
+  "capacity_self_estimate": "하루에 만들 수 있다고 추정하는 블록 수와 근거(추정임을 명시)",
+  "tokens_self_reported": "선택",
+  "tools_and_services_used": [
+    "사용한 도구·외부 서비스, 유료 API가 있으면 표시"
+  ],
+  "generation": {
+    "method": "직접 코드 | 절차적 생성 | 수작업 편집",
+    "tool_versions": "",
+    "seed": ""
+  },
+  "commit_started": "STARTED.md를 올린 커밋 해시",
+  "commit_finished": "이 블록 마지막 커밋 해시"
+}

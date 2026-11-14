@@ -1,0 +1,11 @@
+{
+  "note": "신규 에이전트 공통 시험 과제. 좌표·설명은 시작점일 뿐 확인되지 않은 초안이다(반올림된 좌표). 공식 출처로 확인해 바로잡을 것.",
+  "region": "부산광역시 동구 (26170)",
+  "why_busan": "수도권 밖 권역 확대 판단용. 슬롯 목록 출처: cue-sandbox data/busan_donggu_26170_50slots.json (B26, B36, B44)",
+  "subjects": [
+    {"slot": "26170-B26", "name": "대한성공회 부산주교좌성당", "category": "RELIGIOUS_HERITAGE", "seed_lon": 129.036, "seed_lat": 35.1125, "seed_desc": "로마네스크 양식의 붉은 벽돌 주교좌 성당", "folder": "26170_B26_대한성공회부산주교좌성당", "difficulty": "상: 문화재급 조형, 아치·탑 등 디테일"},
+    {"slot": "26170-B36", "name": "동구국민체육센터", "category": "CIVIC_SPORTS", "seed_lon": 129.045, "seed_lat": 35.128, "seed_desc": "수정산 체육공원 인근 대형 공공 실내스포츠관", "folder": "26170_B36_동구국민체육센터", "difficulty": "중: 대형 단순 매스, 지붕·입면 비례"},
+    {"slot": "26170-B44", "name": "초량어린이도서관", "category": "CIVIC_LIBRARY", "seed_lon": 129.0368, "seed_lat": 35.116, "seed_desc": "이바구길 언덕길 특화 구립 도서관", "folder": "26170_B44_초량어린이도서관", "difficulty": "하: 소형 건물, 경사지 접지"}
+  ],
+  "budget": {"lod3_tri": [10000, 14000], "lod2_tri": [1200, 1800], "lod3_max_bytes": 768000, "lod2_max_bytes": 71680, "texture_max_bytes": 102400, "package_max_bytes": 972800}
+}
