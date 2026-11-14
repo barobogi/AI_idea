@@ -1,0 +1,398 @@
+{
+  "schema_version": "3.1_suwon_gwonseon_cue_lightweight_b11",
+  "spec_ref": "경기도 수원시 권선구(41113) 50대 시그니처 블록 지시서(2026-11-14) §3 CUE 초경량 고품질 스펙 / 117호 블록 장착 규약",
+  "task_slot_id": "41113-B30",
+  "pr_number": null,
+  "pr_number_note": "PR 번호는 GitHub 자동 배정 — 본 매니페스트는 PR 본문과 제목으로 슬롯을 특정한다.",
+  "block_number": 30,
+  "composite_id": "41113_50_030",
+  "block_id": "41113_B30_duretteul_park",
+  "name": "두레뜰공원 — 금곡동 택지지구의 근린공원",
+  "name_en": "duretteul-park",
+  "category": "CAT05_PARK",
+  "category_label": "근린공원",
+  "district": "경기도 수원시 권선구",
+  "admin_dong": "금곡동",
+  "road_address": "경기도 수원시 권선구 금곡동 1092",
+  "jibun_address": "금곡동 1092",
+  "postal_code": "",
+  "coordinates": [
+    126.943947,
+    37.271385
+  ],
+  "orientation_deg": 0.0,
+  "heading": 0.0,
+  "heading_note": "정면(+Z)·도로 방향 연출 기준값. 프린트 주축은 cue_optimization.pca_axis_deg 참조.",
+  "official_height_m": 5.0,
+  "reference_url": "https://www.suwon.go.kr/sw-www/sw-suwonpark/sw-suwonpark-02/sw-suwonpark-02-03/sw-suwonpark-02-03-01-02.jsp",
+  "verified_at": "2026-11-14T05:30:00+09:00",
+  "verification_evidence": [
+    [
+      "https://www.suwon.go.kr/sw-www/sw-suwonpark/sw-suwonpark-02/sw-suwonpark-02-03/sw-suwonpark-02-03-01-02.jsp",
+      "수원시 공원 안내 — 권선구 공원(두레뜰공원 포함)",
+      "공원 현황"
+    ],
+    [
+      "https://www.suwon.go.kr/sw-www/www05/www05-01/www05-01-08.jsp",
+      "수원시 행정구역 — 금곡동",
+      "행정동"
+    ]
+  ],
+  "ground": {
+    "mode": "snap_to_terrain",
+    "origin_y_m": 0.0,
+    "note": "모델 최하단(지반 기준면)이 y=0.000m. ASL 절대고도 필드 없음. 접지 아래면(비가시면)은 제거."
+  },
+  "base_plinth_height_m": 0.34,
+  "lod_switch_distance": 200.0,
+  "spec_dimensions_m": {
+    "park": {
+      "type": "근린공원",
+      "area_m2_note": "공원 면적 공개값 미확인",
+      "facilities": [
+        "산책로",
+        "정자",
+        "놀이터",
+        "운동시설"
+      ]
+    },
+    "site_m": [
+      128.0,
+      104.0
+    ],
+    "model_max_m": 5.0
+  },
+  "detail_counts": {
+    "trees": 30
+  },
+  "review_notes": "· 두레뜰공원은 금곡동 1092 일원의 근린공원으로 호매실·금곡 택지지구 사이에 있다. · 공원 면적은 53,939㎡이며(수원시 통합예약·행안부 전국도시공원표준데이터), 수원시 시설 분류는 근린공원·행안부 분류는 수변공원(저류지·텃밭)이다. 시설 대표 주소는 금곡로140번길 68(호매실동)로 공원이 금곡동·호매실동에 걸쳐 있다. · 산책로 루프와 정자·놀이터·운동시설을 배치해 근린공원의 기본 구성을 갖췄다.",
+  "texture": {
+    "file": "texture_atlas.webp",
+    "size_px": 1024,
+    "format": "WebP quality 85 method 6",
+    "uv_mapping": "world-UV tiling (face_uv) — 재질별 타일 크기로 면 전체 반복, 표지판은 1:1 정확 UV",
+    "tile_size_m": {
+      "wall": 4.4,
+      "trim": 3.0,
+      "glass": 3.4,
+      "roof": 4.0,
+      "stone": 4.2,
+      "ground": 4.0,
+      "metal": 3.0,
+      "wood": 2.4,
+      "accent": 2.0,
+      "plaque": 1.0,
+      "misc": 3.4,
+      "water": 10.0,
+      "brick": 3.6
+    },
+    "regions": {
+      "wall": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "trim": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "glass": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "roof": [
+        512,
+        256,
+        256,
+        256
+      ],
+      "stone": [
+        768,
+        256,
+        256,
+        256
+      ],
+      "ground": [
+        0,
+        512,
+        512,
+        256
+      ],
+      "metal": [
+        512,
+        512,
+        256,
+        256
+      ],
+      "wood": [
+        768,
+        512,
+        256,
+        256
+      ],
+      "accent": [
+        0,
+        768,
+        512,
+        128
+      ],
+      "plaque": [
+        512,
+        768,
+        256,
+        128
+      ],
+      "misc": [
+        768,
+        768,
+        256,
+        128
+      ],
+      "water": [
+        768,
+        896,
+        256,
+        128
+      ],
+      "brick": [
+        0,
+        896,
+        512,
+        128
+      ]
+    }
+  },
+  "hierarchical_components": [
+    {
+      "id": "41113_50_030_01",
+      "label": "구성 01",
+      "mesh_nodes": [
+        "41113_50_030_01a_ground",
+        "41113_50_030_01b_road",
+        "41113_50_030_01c_lane",
+        "41113_50_030_01d_walk",
+        "41113_50_030_01g_plaza",
+        "41113_50_030_01g_joint"
+      ],
+      "toggleable": true
+    },
+    {
+      "id": "41113_50_030_02",
+      "label": "잔디·산책로",
+      "mesh_nodes": [
+        "41113_50_030_02a_lawn",
+        "41113_50_030_02b_path"
+      ],
+      "toggleable": true
+    },
+    {
+      "id": "41113_50_030_03",
+      "label": "구장",
+      "mesh_nodes": [
+        "41113_50_030_03a_court",
+        "41113_50_030_03a_line",
+        "41113_50_030_03b_court",
+        "41113_50_030_03b_line"
+      ],
+      "toggleable": true
+    },
+    {
+      "id": "41113_50_030_04",
+      "label": "놀이터·정자·연못",
+      "mesh_nodes": [
+        "41113_50_030_04a_sand",
+        "41113_50_030_04a_post",
+        "41113_50_030_04a_deck",
+        "41113_50_030_04a_roof",
+        "41113_50_030_04a_slide",
+        "41113_50_030_04a_post_sw",
+        "41113_50_030_04b_base",
+        "41113_50_030_04b_floor",
+        "41113_50_030_04b_col",
+        "41113_50_030_04b_rail",
+        "41113_50_030_04b_rf",
+        "41113_50_030_04b_ridge",
+        "41113_50_030_04c_bed",
+        "41113_50_030_04c_water",
+        "41113_50_030_04c_edge",
+        "41113_50_030_04d_sculpture"
+      ],
+      "toggleable": true
+    },
+    {
+      "id": "41113_50_030_05",
+      "label": "벤치·조명·펜스",
+      "mesh_nodes": [
+        "41113_50_030_05a_bench",
+        "41113_50_030_05a_leg",
+        "41113_50_030_05b_lamp",
+        "41113_50_030_05b_glow",
+        "41113_50_030_05c_fence",
+        "41113_50_030_05d_trunk",
+        "41113_50_030_05d_leaf"
+      ],
+      "toggleable": true
+    },
+    {
+      "id": "41113_50_030_90",
+      "label": "여백 조경(자동 보정)",
+      "mesh_nodes": [
+        "41113_50_030_90t_trunk",
+        "41113_50_030_90t_leaf",
+        "41113_50_030_90l_lamp",
+        "41113_50_030_90l_glow",
+        "41113_50_030_90b_bench",
+        "41113_50_030_90b_leg"
+      ],
+      "toggleable": true
+    }
+  ],
+  "interaction_hotspots": [
+    {
+      "id": "hotspot_lawn",
+      "label": "잔디마당",
+      "offset_m": [
+        0.0,
+        1.0,
+        10.0
+      ]
+    },
+    {
+      "id": "hotspot_pavilion",
+      "label": "정자",
+      "offset_m": [
+        -24.0,
+        2.0,
+        14.0
+      ]
+    },
+    {
+      "id": "hotspot_play",
+      "label": "놀이터",
+      "offset_m": [
+        0.0,
+        2.0,
+        18.0
+      ]
+    }
+  ],
+  "key_expansion_rule": "41113_{구역순번}_{우편번호}_{개체순번}[_{하위모듈}]",
+  "lod_budget": {
+    "lod3_triangles": [
+      10000,
+      14000
+    ],
+    "lod3_max_bytes": 768000,
+    "lod2_triangles": [
+      1200,
+      1800
+    ],
+    "lod2_max_bytes": 71680,
+    "texture_max_bytes": 102400,
+    "package_max_bytes": 972800
+  },
+  "cue_optimization": {
+    "engine": "pimang CUE-lite packer v1.0 (kit41113)",
+    "applied": [
+      "ground_contact_face_cull",
+      "vertex_weld",
+      "normal_buffer_removal_flat_shading",
+      "index_uint16",
+      "webp_q85_method6"
+    ],
+    "normal_buffer": "omitted — glTF 규약상 렌더러가 삼각형 외적으로 플랫 셰이딩 계산",
+    "vertex_weld": {
+      "key": "pos 4dp + uv 5dp",
+      "unique_verts_lod3": 13439,
+      "index_refs_lod3": 31596,
+      "weld_efficiency": 0.4253
+    },
+    "index_dtype_lod3": "uint16",
+    "index_dtype_lod2": "uint16",
+    "pca_axis_deg": 0.0,
+    "pca_note": "접지 1.5m 이하 정점 (x,z) 주성분 방향각 — VWorld 풋프린트 주축 대체 연출력.",
+    "license_note": "건축 제원은 공식 기관 원문 열람분(reference_url 참조). 지도 서비스의 건물 외곽선 데이터는 사용하지 않음. (참조 사본에서 만복이 정정: 원본 문구는 REFERENCE_NOTES.md 참조)"
+  },
+  "references": [
+    {
+      "title": "카카오맵 장소 — 두레뜰공원",
+      "url": "https://place.map.kakao.com/708900963",
+      "read_at": "2026-11-14T05:30:00+09:00",
+      "note": "도로명주소·좌표 대조"
+    },
+    {
+      "title": "수원시 공원 안내 — 권선구 공원(두레뜰공원 포함)",
+      "url": "https://www.suwon.go.kr/sw-www/sw-suwonpark/sw-suwonpark-02/sw-suwonpark-02-03/sw-suwonpark-02-03-01-02.jsp",
+      "read_at": "2026-11-14T05:30:00+09:00",
+      "note": "공원 현황"
+    },
+    {
+      "title": "수원시 행정구역 — 금곡동",
+      "url": "https://www.suwon.go.kr/sw-www/www05/www05-01/www05-01-08.jsp",
+      "read_at": "2026-11-14T05:30:00+09:00",
+      "note": "행정동"
+    }
+  ],
+  "reference_note": "도로명주소·좌표는 카카오맵/지도 장소검색(2026-11-14)으로, 시설 제원은 수원시·공공기관·보도 원문 열람값으로 대조했다.",
+  "generation": {
+    "generator": "pimang suwon gwonseon 41113-B30 CUE-spec builder v1.0",
+    "date": "2026-11-14",
+    "execution_code_in_package": false,
+    "note": "생성 스크립트는 저장소에 포함하지 않는다. 4종 에셋만 반영."
+  },
+  "bbox_local_m": {
+    "min": [
+      -70.0,
+      0.0,
+      -54.097
+    ],
+    "max": [
+      70.0,
+      13.565,
+      64.0
+    ],
+    "size": [
+      140.0,
+      13.565,
+      118.097
+    ],
+    "core_min": [
+      -70.0,
+      0.0,
+      -54.097
+    ],
+    "core_max": [
+      70.0,
+      13.565,
+      64.0
+    ],
+    "note": "LOD3 실측 바운딩박스. min.y = 0.000m 는 지반 기준면(ASL 아님)."
+  },
+  "files": {
+    "model_lod3.gltf": {
+      "triangles": 10532,
+      "bytes": 470496,
+      "vertices_unique": 13439
+    },
+    "model_lod2.gltf": {
+      "triangles": 1290,
+      "bytes": 62057
+    },
+    "texture_atlas.webp": {
+      "bytes": 29112,
+      "size_px": 1024,
+      "format": "webp_q85_method6"
+    }
+  },
+  "anchor_nodes": [
+    "hotspot_lawn",
+    "hotspot_pavilion",
+    "hotspot_play"
+  ],
+  "package_total_bytes": 561665
+}
