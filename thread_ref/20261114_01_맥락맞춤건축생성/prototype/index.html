@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>주변 맥락 맞춤 건축 매스 생성 1단계 프로토타입 (규칙 기반, 순수 가상 데이터)</title>
+<style>
+  body { margin: 0; padding: 0; overflow: hidden; background: #0f172a; font-family: 'NanumSquareRound', 'Apple SD Gothic Neo', sans-serif; color: #f8fafc; }
+  #canvas-container { width: 100vw; height: 100vh; display: block; }
+  #ui-panel {
+    position: absolute; top: 16px; left: 16px; width: 340px;
+    background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px;
+    padding: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+  h2 { font-size: 15px; margin: 0 0 10px 0; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
+  .badge { font-size: 10px; background: #0284c7; color: white; padding: 2px 6px; border-radius: 4px; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; font-size: 12px; }
+  .stat-box { background: rgba(255,255,255,0.05); padding: 8px; border-radius: 6px; border-left: 3px solid #38bdf8; }
+  .stat-label { color: #94a3b8; font-size: 11px; }
+  .stat-val { font-size: 14px; font-weight: bold; color: #f1f5f9; margin-top: 2px; }
+  .info-box { font-size: 11px; color: #cbd5e1; line-height: 1.45; margin-bottom: 12px; background: rgba(56, 189, 248, 0.08); padding: 8px; border-radius: 6px; }
+  button {
+    width: 100%; padding: 10px; background: #0284c7; color: white; border: none;
+    border-radius: 6px; font-weight: bold; cursor: pointer; transition: all 0.2s; font-size: 13px;
+  }
+  button:hover { background: #0369a1; }
+  #notice { position: absolute; bottom: 12px; right: 16px; font-size: 11px; color: #64748b; }
+</style>
+<!-- Three.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+<div id="ui-panel">
+  <h2><span>🏙️ 맥락 맞춤 건축 생성 (1단계)</span> <span class="badge">가상 데이터</span></h2>
+  <div class="info-box">
+    • <b>대상 부지</b>: 중앙 황색 격자 (24m × 20m)<br>
+    • <b>원리</b>: 반경 80m 내 가상 주변 건물 12동의 층수·높이 중앙값 통계 분석을 거쳐 부지에 어울리는 추천 매스를 생성합니다.
+  </div>
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="stat-label">주변 평균/중앙 높이</div>
+      <div class="stat-val" id="context-height">16.5m (5층)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">주요 주변 용도</div>
+      <div class="stat-val" id="context-usage">근린생활 (67%)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">추천 생성 층수</div>
+      <div class="stat-val" id="gen-floors" style="color:#fbbf24;">5층 (17.5m)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">건폐율 / 건식</div>
+      <div class="stat-val" id="gen-bcr">58.3% (RC조)</div>
+    </div>
+  </div>
+  <button id="btn-re-seed">🎲 주변 환경 재생성 및 맥락 맞춤 빌드</button>
+</div>
+<div id="notice">※ 본 데모는 기술 연구용 프로토타입이며 실제 도시/개인/인증 데이터를 전혀 포함하지 않은 가상 데이터입니다.</div>
+<div id="canvas-container"></div>
+
+<script>
+// --- Three.js Setup ---
+const container = document.getElementById('canvas-container');
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0f172a);
+scene.fog = new THREE.FogExp2(0x0f172a, 0.008);
+
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+camera.position.set(70, 60, 80);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+container.appendChild(renderer.domElement);
+
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+controls.maxPolarAngle = Math.PI / 2 - 0.05;
+
+// --- Lighting ---
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+scene.add(ambientLight);
+
+const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+dirLight.position.set(50, 100, 40);
+dirLight.castShadow = true;
+dirLight.shadow.mapSize.width = 2048;
+dirLight.shadow.mapSize.height = 2048;
+dirLight.shadow.camera.near = 10;
+dirLight.shadow.camera.far = 250;
+dirLight.shadow.camera.left = -70;
+dirLight.shadow.camera.right = 70;
+dirLight.shadow.camera.top = 70;
+dirLight.shadow.camera.bottom = -70;
+scene.add(dirLight);
+
+// --- Ground & Site ---
+const groundGeo = new THREE.PlaneGeometry(300, 300);
+const groundMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.9, metalness: 0.1 });
+const ground = new THREE.Mesh(groundGeo, groundMat);
+ground.rotation.x = -Math.PI / 2;
+ground.receiveShadow = true;
+scene.add(ground);
+
+const gridHelper = new THREE.GridHelper(200, 40, 0x334155, 0x1e293b);
+gridHelper.position.y = 0.05;
+scene.add(gridHelper);
+
+// Target Parcel (24m x 20m)
+const parcelWidth = 24;
+const parcelDepth = 20;
+const parcelGeo = new THREE.PlaneGeometry(parcelWidth, parcelDepth);
+const parcelMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.35, depthWrite: false });
+const parcelMesh = new THREE.Mesh(parcelGeo, parcelMat);
+parcelMesh.rotation.x = -Math.PI / 2;
+parcelMesh.position.set(0, 0.1, 0);
+scene.add(parcelMesh);
+
+const parcelEdges = new THREE.LineSegments(
+  new THREE.EdgesGeometry(parcelGeo),
+  new THREE.LineBasicMaterial({ color: 0xfbbf24, linewidth: 2 })
+);
+parcelEdges.rotation.x = -Math.PI / 2;
+parcelEdges.position.set(0, 0.12, 0);
+scene.add(parcelEdges);
+
+// --- Context Generation & Recommendation Algorithm ---
+let contextMeshes = [];
+let generatedMesh = null;
+
+function generateContextAndBuilding() {
+  // Clear previous
+  contextMeshes.forEach(m => scene.remove(m));
+  contextMeshes = [];
+  if (generatedMesh) scene.remove(generatedMesh);
+
+  // 1. Generate Synthetic Context (12-16 buildings around parcel)
+  const syntheticBuildings = [];
+  const minRadius = 25;
+  const maxRadius = 75;
+  const numBuildings = 14;
+
+  for (let i = 0; i < numBuildings; i++) {
+    const angle = (i / numBuildings) * Math.PI * 2 + (Math.random() - 0.5) * 0.3;
+    const dist = minRadius + Math.random() * (maxRadius - minRadius);
+    const cx = Math.cos(angle) * dist;
+    const cz = Math.sin(angle) * dist;
+
+    // Synthetic types: Low-rise residential (2-4F), Mid-rise commercial (4-7F), High-rise office (8-12F)
+    const randType = Math.random();
+    let floors, usage, baseH;
+    if (randType < 0.6) {
+      floors = 3 + Math.floor(Math.random() * 3); // 3-5 floors
+      usage = '근린생활/주거';
+      baseH = floors * 3.3;
+    } else if (randType < 0.85) {
+      floors = 5 + Math.floor(Math.random() * 3); // 5-7 floors
+      usage = '일반상업';
+      baseH = floors * 3.5;
+    } else {
+      floors = 8 + Math.floor(Math.random() * 4); // 8-11 floors
+      usage = '업무시설';
+      baseH = floors * 3.8;
+    }
+
+    const bw = 12 + Math.random() * 14;
+    const bd = 12 + Math.random() * 14;
+
+    syntheticBuildings.push({ x: cx, z: cz, w: bw, d: bd, h: baseH, floors, usage });
+
+    // Render context building mesh (neutral tone)
+    const bGeo = new THREE.BoxGeometry(bw, baseH, bd);
+    const bMat = new THREE.MeshStandardMaterial({
+      color: usage === '근린생활/주거' ? 0x475569 : (usage === '일반상업' ? 0x64748b : 0x94a3b8),
+      roughness: 0.7,
+      metalness: 0.2
+    });
+    const bMesh = new THREE.Mesh(bGeo, bMat);
+    bMesh.position.set(cx, baseH / 2, cz);
+    bMesh.castShadow = true;
+    bMesh.receiveShadow = true;
+    scene.add(bMesh);
+    contextMeshes.push(bMesh);
+  }
+
+  // 2. Statistical Analysis (Context Metrics)
+  const heights = syntheticBuildings.map(b => b.h).sort((a,b) => a - b);
+  const floorsList = syntheticBuildings.map(b => b.floors).sort((a,b) => a - b);
+  const medianH = heights[Math.floor(heights.length / 2)];
+  const medianF = floorsList[Math.floor(floorsList.length / 2)];
+
+  // Update UI Stats
+  document.getElementById('context-height').innerText = `${medianH.toFixed(1)}m (${medianF}층)`;
+  document.getElementById('context-usage').innerText = '근린상업 (우세)';
+
+  // 3. Rule-Based Target Mass Generation
+  // Rule 1: Setback 1.5m from parcel edges -> footprint max 21m x 17m
+  const footprintW = parcelWidth - 4;
+  const footprintD = parcelDepth - 4;
+  
+  // Rule 2: Height recommended as Median ± 10%
+  const targetFloors = medianF;
+  const targetH = targetFloors * 3.4;
+
+  document.getElementById('gen-floors').innerText = `${targetFloors}층 (${targetH.toFixed(1)}m)`;
+  const bcr = ((footprintW * footprintD) / (parcelWidth * parcelDepth) * 100).toFixed(1);
+  document.getElementById('gen-bcr').innerText = `${bcr}% (권장 한도내)`;
+
+  // Create Generated Building Group (Stepped mass)
+  const genGroup = new THREE.Group();
+  
+  // Podium (Floors 1~2)
+  const podiumH = 7.0;
+  const podGeo = new THREE.BoxGeometry(footprintW, podiumH, footprintD);
+  const podMat = new THREE.MeshStandardMaterial({ color: 0x38bdf8, roughness: 0.3, metalness: 0.5 });
+  const podMesh = new THREE.Mesh(podGeo, podMat);
+  podMesh.position.set(0, podiumH / 2, 0);
+  podMesh.castShadow = true;
+  podMesh.receiveShadow = true;
+  genGroup.add(podMesh);
+
+  // Upper Tower (Floors 3~Target)
+  if (targetFloors > 2) {
+    const towerH = targetH - podiumH;
+    const towerW = footprintW * 0.85;
+    const towerD = footprintD * 0.85;
+    const towGeo = new THREE.BoxGeometry(towerW, towerH, towerD);
+    const towMat = new THREE.MeshStandardMaterial({ color: 0x0284c7, roughness: 0.4, metalness: 0.6 });
+    const towMesh = new THREE.Mesh(towGeo, towMat);
+    towMesh.position.set(0, podiumH + towerH / 2, 0);
+    towMesh.castShadow = true;
+    towMesh.receiveShadow = true;
+    genGroup.add(towMesh);
+  }
+
+  // Accent Edge Wireframe
+  const wireGeo = new THREE.EdgesGeometry(new THREE.BoxGeometry(footprintW, targetH, footprintD));
+  const wireMat = new THREE.LineBasicMaterial({ color: 0x38bdf8, linewidth: 1.5 });
+  const wireMesh = new THREE.LineSegments(wireGeo, wireMat);
+  wireMesh.position.set(0, targetH / 2, 0);
+  genGroup.add(wireMesh);
+
+  scene.add(genGroup);
+  generatedMesh = genGroup;
+}
+
+// Initial Build
+generateContextAndBuilding();
+
+document.getElementById('btn-re-seed').addEventListener('click', generateContextAndBuilding);
+
+// Resize
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+// Render Loop
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate();
+</script>
+</body>
+</html>
