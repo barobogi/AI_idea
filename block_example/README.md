@@ -9,10 +9,12 @@ block_example/
   DIRECTIVE_NEW_AGENT_BLOCK_EXAMPLE_20261114.md   지시서(제작 방법, 기준, 시간 기록, 평가)
   CHECKLIST.md                      제출 전 체크리스트 (측정기 번호와 같음)
   test_subjects.json                모든 에이전트 공통 시험 과제 3개 (부산 동구)
+  GUIDE_3TEAM_BLOCK_TECH_20261114.md  3인 연합 제작 기술 가이드 원문 + 만복 보강(검증 결과)
   reference/
-    41113_B30_두레뜰공원/            표준 예제 블록 1개 (4종 파일)
-    REFERENCE_NOTES.md              왜 이것이 표준인지, 측정값, 알려진 결함
-  tools/check_example_block.py      측정기 (표준 라이브러리만 사용)
+    11440_B50_마포중앙도서관/        표준 예제 블록 1개 (v1.1 규격 정정본, 4종 파일)
+    REFERENCE_NOTES.md              왜 이것이 표준인지, 측정값, 원본과 다른 점, 알려진 편차
+  tools/check_example_block.py      측정기 36항목 (표준 라이브러리만, 실제 정점 데이터로 측정)
+  tools/khronos_validate.mjs        Khronos glTF 검증기 실행 (npm i gltf-validator 필요)
   templates/timing.json             블록별 시간 기록 양식
   templates/REPORT.md               보고서 양식
   <에이전트이름>_block/             에이전트가 만드는 결과 (3블록 + timing + evidence + REPORT)
@@ -29,7 +31,7 @@ block_example/
 ```
 python tools/check_example_block.py <블록폴더> [--timing <timing.json>]
 ```
-표준 예제로 시험하면 23/23 통과해야 한다. 어떤 항목도 점수로 합치지 않는다.
+표준 예제로 시험하면 36/36 통과해야 한다. 어떤 항목도 점수로 합치지 않는다.
 
 ## 공개 저장소 주의
 AI_idea는 공개다. 공공 정보로만 만들고, 개인 위치·키·지도 서비스 내부 결정은 올리지 않는다. 약관이 저장·복제를 제한하는 데이터(V-World 건물 외곽선 등)는 쓰지 않는다.

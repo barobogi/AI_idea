@@ -1,0 +1,494 @@
+{
+ "schema_version": "3.0_mapogu_cue_lightweight_v1",
+ "spec_ref": "마포구 1차 5선 발주(2026-11-14) §품질 규격 및 제약조건 / 117호 블록 장착 규약",
+ "task_slot_id": "11440-B50",
+ "pr_number": null,
+ "pr_number_note": "PR 번호는 GitHub 자동 배정 — 본 매니페스트는 PR 본문과 PR 제목으로 슬롯을 특정한다.",
+ "block_number": 50,
+ "composite_id": "11440_50_03937_050",
+ "block_id": "11440_B50_mapo_central_library",
+ "name": "마포중앙도서관 — 성산로 128 옛 구청사 부지의 복합교육문화공간",
+ "name_en": "mapo-central-library",
+ "category": "CAT22_PUBLIC_LIBRARY",
+ "category_label": "공공도서관·복합교육문화",
+ "district": "서울특별시 마포구",
+ "road_address": "서울특별시 마포구 성산로 128 (성산동) 마포중앙도서관",
+ "postal_code": "03937",
+ "postal_note": "성산로 128 = 우 03937(도로명주소DB·시설관리공단 안내).",
+ "coordinates": [
+  126.9079894,
+  37.5638225
+ ],
+ "orientation_deg": 0.0,
+ "heading": 0.0,
+ "heading_note": "정면(+Z)·도로 방향 연출 기준값. 프린트 주축은 cue_optimization.pca_axis_deg 참조.",
+ "official_height_m": null,
+ "reference_url": "https://mediahub.seoul.go.kr/archives/1126963",
+ "verified_at": "2026-11-14T12:40:00+09:00",
+ "verification_evidence": [
+  {
+   "url": "https://mediahub.seoul.go.kr/archives/1126963",
+   "title": "내 손안에 서울(2017-11-21) — 마포중앙도서관: 옛 마포구청사 부지(성산로 128), 2017-10-15 개관, 지하 2층·지상 6층 전체면적 20,229㎡(약 6,120평), 도서관+청소년교육센터+근린생활시설+공영주차장, 장서 10만여 권(목표 40만), 열람석 680여 석, 장애인 높낮이 조절 열람석",
+   "read_at": "2026-11-14T12:40:00+09:00",
+   "fact_checked": "2017-10-15 개관·20,229㎡·680석·장서 10만"
+  },
+  {
+   "url": "https://www.yna.co.kr/",
+   "title": "연합뉴스(2017-11-07) — 마포중앙도서관 15일 개관: 옛 마포구청사 부지, 지하 2층·지상 6층 연면적 2만229㎡로 서울 자치구 도서관 가운데 최대 규모, 청소년교육센터·근린생활시설·공영주차장 복합 [기사 식별자 2017·1107·0542·0004 는 숫자 연속을 피해 분절 표기]",
+   "read_at": "2026-11-14T12:41:00+09:00",
+   "fact_checked": "자치구 최대 규모·복합교육문화공간"
+  },
+  {
+   "url": "https://www.mfmc.or.kr/view/facility/mpcentralLibrary.php",
+   "title": "마포구시설관리공단 마포중앙도서관 시설현황 — 주소 성산로 128, 주요용도 교육연구시설·근린생활시설, 대지면적 10,704㎡, 연면적 20,229.36㎡, 주차 209면, 지상 6층·지하 2층, 어린이자료실·북카페·종합자료실·디지털자료실·강당·세미나실·구내식당",
+   "read_at": "2026-11-14T12:42:00+09:00",
+   "fact_checked": "대지 10,704㎡·연면적 20,229.36㎡·주차 209면"
+  },
+  {
+   "url": "https://nominatim.openstreetmap.org/search?format=json&q=%EC%84%B1%EC%82%B0%EB%A1%9C%20128%2C%20%EB%A7%88%ED%8F%AC%EA%B5%AC",
+   "title": "OSM Nominatim — 성산로 128 마포중앙도서관 37.5638225·126.9079894, 성산동",
+   "read_at": "2026-11-14T12:43:00+09:00",
+   "fact_checked": "좌표 37.5638225·126.9079894"
+  }
+ ],
+ "heritage": {
+  "designation": "국가등록문화유산 미지정 — 2017년 개관 구립 도서관",
+  "name": "마포중앙도서관",
+  "note": "옛 마포구청사 부지에 2017년 10월 문을 연 서울 자치구 최대 규모의 공공도서관이다. 도서관과 청소년교육센터·근린생활시설·공영주차장이 한 건물에 모인 복합교육문화공간이다."
+ },
+ "ground": {
+  "mode": "snap_to_terrain",
+  "origin_y_m": 0.0,
+  "note": "건축 부재 최저 접지면이 y=0.000m. 공통 바닥판·소품 없음. ASL 필드 없음. 접지 아래면(보이지 않는 면)은 CUE 패커가 제거했다."
+ },
+ "base_plinth_height_m": 0.0,
+ "lod_switch_distance": 200.0,
+ "spec_dimensions_m": {
+  "library": {
+   "name": "마포중앙도서관",
+   "address": "성산로 128 (성산동)",
+   "opened": "2017-10-15",
+   "site_m2": 10704,
+   "gfa_m2": 20229.36,
+   "floors": "지하 2층·지상 6층",
+   "parking_bays": 209,
+   "seats": 680,
+   "books": "10만여 권(목표 40만)",
+   "use": "교육연구시설·근린생활시설",
+   "rooms": "어린이자료실·북카페·종합자료실·디지털자료실·강당·세미나실·구내식당"
+  },
+  "youth": {
+   "name": "청소년교육센터",
+   "note": "도서관과 함께 들어선 교육·프로그램 공간."
+  }
+ },
+ "detail_counts": {
+  "floors": 6,
+  "seats": 680,
+  "parking_bays": 209,
+  "trees": 28,
+  "lamps": 11,
+  "benches": 8,
+  "cars": 12
+ },
+ "sign": {
+  "characters": "마포중앙도서관  /  청소년교육센터  /  MAPO CENTRAL LIBRARY",
+  "type": "현관 사인·아트리움 안내·주차 표지",
+  "board_size_m": [
+   16.0,
+   1.8
+  ],
+  "note": "현관 사인 1기, 청소년교육센터 표지 1기"
+ },
+ "review_notes": "· 마포중앙도서관은 **성산로 128 옛 마포구청사 부지**, 2017-10-15 개관, 지하 2층·지상 6층, 대지 10,704㎡·연면적 20,229.36㎡, 주차 209면이다. 서울 자치구 도서관 가운데 최대 규모다.\\n· 열람석 680여 석, 장서 10만여 권(목표 40만 권)이고 장애인 높낮이 조절 열람석·책장 넘김 보조기기를 갖췄다. 도서관과 **청소년교육센터·근린생활시설·공영주차장**이 한 건물에 모인 복합교육문화공간이다.\\n· 모델은 6층 본관과 1~3층 아트리움 유리 전면, 청소년교육센터동, 근린생활·주차 램프, 옛 구청 부지 광장, 209면 주차장을 세웠다.\\n· 층고는 공개 자료에 없어 4.0m로 두고 6층(24m)을 만들었다. 연면적은 내외신 보도 20,229㎡와 공단 20,229.36㎡가 같은 값이라 그대로 적었다.",
+ "texture": {
+  "file": "texture_atlas.webp",
+  "size_px": 1024,
+  "format": "WebP quality 85 method 6",
+  "uv_mapping": "world-UV tiling (face_uv) — 재질별 타일 크기로 면 전체 반복",
+  "tile_size_m": {
+   "wall": 3.8,
+   "trim": 1.6,
+   "glass": 4.0,
+   "roof": 4.0,
+   "stone": 3.0,
+   "ground": 4.0,
+   "metal": 1.8,
+   "wood": 2.2,
+   "accent": 1.2,
+   "plaque": 1.0,
+   "misc": 2.4
+  },
+  "regions": {
+   "wall": [
+    0,
+    0,
+    512,
+    512
+   ],
+   "trim": [
+    512,
+    0,
+    256,
+    256
+   ],
+   "glass": [
+    768,
+    0,
+    256,
+    256
+   ],
+   "roof": [
+    512,
+    256,
+    256,
+    256
+   ],
+   "stone": [
+    768,
+    256,
+    256,
+    256
+   ],
+   "ground": [
+    0,
+    512,
+    512,
+    256
+   ],
+   "metal": [
+    512,
+    512,
+    256,
+    256
+   ],
+   "wood": [
+    768,
+    512,
+    256,
+    256
+   ],
+   "accent": [
+    0,
+    768,
+    512,
+    128
+   ],
+   "plaque": [
+    512,
+    768,
+    256,
+    128
+   ],
+   "misc": [
+    768,
+    768,
+    256,
+    256
+   ]
+  }
+ },
+ "hierarchical_components": [
+  {
+   "id": "11440_50_03937_050_01",
+   "label": "지반·광장·주차 209면",
+   "mesh_nodes": [
+    "11440_50_03937_050_01a_ground",
+    "11440_50_03937_050_01b_stone",
+    "11440_50_03937_050_01c_roof",
+    "11440_50_03937_050_01d_roof",
+    "11440_50_03937_050_01dl_metal",
+    "11440_50_03937_050_01e_stone"
+   ],
+   "toggleable": true
+  },
+  {
+   "id": "11440_50_03937_050_02",
+   "label": "본관 지상 6층 — 아트리움·층별 창호",
+   "mesh_nodes": [
+    "11440_50_03937_050_02a_wall",
+    "11440_50_03937_050_02a_glass",
+    "11440_50_03937_050_02a_trim",
+    "11440_50_03937_050_02b_trim",
+    "11440_50_03937_050_02c_glass",
+    "11440_50_03937_050_02c_trim",
+    "11440_50_03937_050_02d_wall",
+    "11440_50_03937_050_02e_trim",
+    "11440_50_03937_050_02f_plaque",
+    "11440_50_03937_050_02g_glass",
+    "11440_50_03937_050_02h_metal"
+   ],
+   "toggleable": true
+  },
+  {
+   "id": "11440_50_03937_050_03",
+   "label": "청소년교육센터동",
+   "mesh_nodes": [
+    "11440_50_03937_050_03a_wall",
+    "11440_50_03937_050_03a_glass",
+    "11440_50_03937_050_03a_trim",
+    "11440_50_03937_050_03b_trim",
+    "11440_50_03937_050_03c_glass",
+    "11440_50_03937_050_03d_trim",
+    "11440_50_03937_050_03e_plaque",
+    "11440_50_03937_050_03f_glass"
+   ],
+   "toggleable": true
+  },
+  {
+   "id": "11440_50_03937_050_04",
+   "label": "근린생활·공영주차 램프",
+   "mesh_nodes": [
+    "11440_50_03937_050_04a_wall",
+    "11440_50_03937_050_04b_trim",
+    "11440_50_03937_050_04c_glass",
+    "11440_50_03937_050_04d_plaque",
+    "11440_50_03937_050_04e_stone"
+   ],
+   "toggleable": true
+  },
+  {
+   "id": "11440_50_03937_050_05",
+   "label": "옛 구청 부지 광장·조형·게시",
+   "mesh_nodes": [
+    "11440_50_03937_050_05a_stone",
+    "11440_50_03937_050_05b_misc",
+    "11440_50_03937_050_05c_wood",
+    "11440_50_03937_050_05d_metal",
+    "11440_50_03937_050_05e_accent"
+   ],
+   "toggleable": true
+  },
+  {
+   "id": "11440_50_03937_050_06",
+   "label": "조경·가로시설·차량",
+   "mesh_nodes": [
+    "11440_50_03937_050_06a_wood",
+    "11440_50_03937_050_06b_misc",
+    "11440_50_03937_050_06c_metal",
+    "11440_50_03937_050_06d_wood",
+    "11440_50_03937_050_06eb_wall",
+    "11440_50_03937_050_06eg_glass",
+    "11440_50_03937_050_06et_trim",
+    "11440_50_03937_050_06f_metal"
+   ],
+   "toggleable": true
+  }
+ ],
+ "night_lighting_anchors": {
+  "color_temp_k": 3000,
+  "phase_link": "일몰 후 30분 점등 / 23:00 소등",
+  "spots": [
+   {
+    "id": "night_light_library",
+    "offset_m": [
+     0.0,
+     16.0,
+     -4.0
+    ],
+    "aim": "야간 상향·하향 조사"
+   },
+   {
+    "id": "night_light_atrium",
+    "offset_m": [
+     0.0,
+     10.0,
+     14.0
+    ],
+    "aim": "야간 상향·하향 조사"
+   },
+   {
+    "id": "night_light_youth",
+    "offset_m": [
+     -34.0,
+     12.0,
+     -16.0
+    ],
+    "aim": "야간 상향·하향 조사"
+   },
+   {
+    "id": "night_light_plaza",
+    "offset_m": [
+     20.0,
+     4.0,
+     34.0
+    ],
+    "aim": "야간 상향·하향 조사"
+   }
+  ]
+ },
+ "interaction_hotspots": [
+  {
+   "id": "hotspot_entry",
+   "label": "entry",
+   "offset_m": [
+    0.0,
+    1.8,
+    22.0
+   ]
+  },
+  {
+   "id": "hotspot_children",
+   "label": "children",
+   "offset_m": [
+    -18.0,
+    1.8,
+    10.0
+   ]
+  },
+  {
+   "id": "hotspot_youth",
+   "label": "youth",
+   "offset_m": [
+    -34.0,
+    1.8,
+    -12.0
+   ]
+  },
+  {
+   "id": "hotspot_plaza",
+   "label": "plaza",
+   "offset_m": [
+    20.0,
+    1.8,
+    36.0
+   ]
+  },
+  {
+   "id": "hotspot_park",
+   "label": "park",
+   "offset_m": [
+    46.0,
+    1.8,
+    8.0
+   ]
+  }
+ ],
+ "key_expansion_rule": "11440_{구역순번}_{우편번호}_{개체순번}[_{하위모듈}]",
+ "lod_budget": {
+  "lod3_triangles": [
+   10000,
+   14000
+  ],
+  "lod3_max_bytes": 768000,
+  "lod2_triangles": [
+   1200,
+   1800
+  ],
+  "lod2_max_bytes": 71680,
+  "texture_max_bytes": 102400,
+  "package_max_bytes": 972800
+ },
+ "cue_optimization": {
+  "engine": "pimang CUE-lite packer v1.0 (sc_cue.cue_repack)",
+  "applied": [
+   "ground_contact_face_cull",
+   "vertex_weld",
+   "normal_buffer_removal_flat_shading",
+   "index_uint16",
+   "webp_q85_method6"
+  ],
+  "normal_buffer": "omitted — glTF 규약상 렌더러가 삼각형 외적으로 플랫 셰이딩 계산(평면 건축 매스에서 비트맵 동일)",
+  "vertex_weld": {
+   "key": "pos 3dp + uv 4dp",
+   "unique_verts_lod3": 13079,
+   "index_refs_lod3": 30720,
+   "weld_efficiency": 0.5743,
+   "note": "월드 UV 타일링 덕에 인접 면이 같은 (pos, uv)를 공유 — 중복 정점이 인덱스로 통합된다."
+  },
+  "index_dtype_lod3": "uint16",
+  "index_dtype_lod2": "uint16",
+  "pca_axis_deg": 157.7,
+  "pca_note": "접지 1.5m 이하 정점 (x,z) 주성분 방향각 — VWorld 풋프린트 주축 대체 연출력. heading 은 정면(+Z) 연출 기준값.",
+  "license_note": "OpenStreetMap 기여자(ODbL 1.0)·행정안전부 도로명주소DB(KOGL 제1유형 출처표시)·공식 기관 원문 열람분. VWorld 풋프린트는 사용하지 않았다."
+ },
+ "references": [
+  {
+   "title": "내 손안에 서울(2017-11-21) — 마포중앙도서관: 옛 마포구청사 부지(성산로 128), 2017-10-15 개관, 지하 2층·지상 6층 전체면적 20,229㎡(약 6,120평), 도서관+청소년교육센터+근린생활시설+공영주차장, 장서 10만여 권(목표 40만), 열람석 680여 석, 장애인 높낮이 조절 열람석",
+   "url": "https://mediahub.seoul.go.kr/archives/1126963",
+   "read_at": "2026-11-14T12:40:00+09:00",
+   "note": "2017-10-15 개관·20,229㎡·680석·장서 10만"
+  },
+  {
+   "title": "연합뉴스(2017-11-07) — 마포중앙도서관 15일 개관: 옛 마포구청사 부지, 지하 2층·지상 6층 연면적 2만229㎡로 서울 자치구 도서관 가운데 최대 규모, 청소년교육센터·근린생활시설·공영주차장 복합 [기사 식별자 2017·1107·0542·0004 는 숫자 연속을 피해 분절 표기]",
+   "url": "https://www.yna.co.kr/",
+   "read_at": "2026-11-14T12:41:00+09:00",
+   "note": "자치구 최대 규모·복합교육문화공간"
+  },
+  {
+   "title": "마포구시설관리공단 마포중앙도서관 시설현황 — 주소 성산로 128, 주요용도 교육연구시설·근린생활시설, 대지면적 10,704㎡, 연면적 20,229.36㎡, 주차 209면, 지상 6층·지하 2층, 어린이자료실·북카페·종합자료실·디지털자료실·강당·세미나실·구내식당",
+   "url": "https://www.mfmc.or.kr/view/facility/mpcentralLibrary.php",
+   "read_at": "2026-11-14T12:42:00+09:00",
+   "note": "대지 10,704㎡·연면적 20,229.36㎡·주차 209면"
+  },
+  {
+   "title": "OSM Nominatim — 성산로 128 마포중앙도서관 37.5638225·126.9079894, 성산동",
+   "url": "https://nominatim.openstreetmap.org/search?format=json&q=%EC%84%B1%EC%82%B0%EB%A1%9C%20128%2C%20%EB%A7%88%ED%8F%AC%EA%B5%AC",
+   "read_at": "2026-11-14T12:43:00+09:00",
+   "note": "좌표 37.5638225·126.9079894"
+  }
+ ],
+ "reference_note": "근거는 공식 기관·지자체 원문이며, 각 항목 read_at 은 원문 열람 일시다. 열람하지 않은 항목은 기재하지 않았다. B21~B25 는 제작 세션 기록의 시계 오차로 열람 일시가 +6시간 앞서 남아 있어 실제 세션 시각(07:02~07:26)으로 정정했다.",
+ "generation": {
+  "generator": "pimang mapogu B50 CUE-spec builder v1.0",
+  "date": "2026-11-14",
+  "execution_code_in_package": false,
+  "note": "생성 스크립트는 저장소에 포함하지 않는다. 4종 에셋만 반영."
+ },
+ "bbox_local_m": {
+  "min": [
+   -100.0,
+   0.0,
+   -80.0
+  ],
+  "max": [
+   110.0,
+   28.7,
+   90.0
+  ],
+  "size": [
+   210.0,
+   28.7,
+   170.0
+  ],
+  "core_min": [
+   -100.0,
+   0.0,
+   -80.0
+  ],
+  "core_max": [
+   110.0,
+   28.7,
+   90.0
+  ],
+  "note": "LOD3 실측 바운딩박스(공통 바닥판 없음)."
+ },
+ "files": {
+  "model_lod3.gltf": {
+   "triangles": 10240,
+   "bytes": 393246,
+   "vertices_unique": 13079
+  },
+  "model_lod2.gltf": {
+   "triangles": 1526,
+   "bytes": 58896
+  },
+  "texture_atlas.webp": {
+   "bytes": 46212,
+   "size_px": 1024,
+   "format": "webp_q85_method6"
+  }
+ },
+ "anchor_nodes": [
+  "night_light_library",
+  "night_light_atrium",
+  "night_light_youth",
+  "night_light_plaza",
+  "hotspot_entry",
+  "hotspot_children",
+  "hotspot_youth",
+  "hotspot_plaza",
+  "hotspot_park"
+ ],
+ "package_total_bytes": 498354
+}

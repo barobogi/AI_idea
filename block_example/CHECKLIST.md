@@ -11,13 +11,15 @@
 - [ ] Q01 LOD3 삼각형 10,000~14,000
 - [ ] Q02 LOD2 삼각형 1,200~1,800
 - [ ] Q03 LOD3 768,000B 이하 / Q04 LOD2 71,680B 이하
-- [ ] Q05 접지: LOD3 최저점 Y=0.000, LOD2 ±0.5m. 사각 바닥판 없음
+- [ ] Q05 접지: LOD3·LOD2 최저점 Y=0.000(±0.005), **실제 정점 데이터로** 확인. 사각 바닥판 없음
 - [ ] Q06 인덱스 uint16, 법선 버퍼 없음
 - [ ] Q07 텍스처 참조 `texture_atlas.webp` 하나, 버퍼 내장
 - [ ] Q08 1024×1024 WebP / Q09 102,400B 이하
 - [ ] Q10 패키지 합계 972,800B 이하
-- [ ] glTF Validator(Khronos) 오류 0 확인(권장, 측정기 밖)
-- [ ] 뷰어(three.js 등)에서 LOD3·LOD2 둘 다 열림 확인, 렌더 캡처 3장(사선·상부·측면)을 `evidence/`에 저장
+- [ ] Q11 재질 11종 / Q12 UV uint16 normalized / Q13 전 노드 name / Q14 앵커 night_light 4 + hotspot 5
+- [ ] **Q15 접근자 min/max가 실제 데이터와 일치 / Q16 scene.nodes 유효**
+- [ ] **Khronos 검증기: WebP MIME 확장 미선언 2건 외 오류 0** (`node tools/khronos_validate.mjs`, LOD3·LOD2 모두)
+- [ ] 뷰어(three.js 등)에서 LOD3·LOD2 둘 다 열림 확인, 렌더 캡처 3장(`{슬롯}_front.png`, `_bird.png`, `_eye.png`, 1400×980)을 `evidence/`에 저장
 
 ## 3. 시각 체크리스트 (제미나이가 8항목으로 판정, 제출 전 자기 점검)
 - [ ] V1 대상 건물이 알아볼 수 있다(공식 사진·자료의 형태·비례와 맞음)
@@ -36,6 +38,8 @@
 - [ ] M04 열람 시각은 KST(`+09:00`)
 - [ ] M05 전화번호·키·서명 URL 없음
 - [ ] M06 슬롯 번호가 폴더명과 일치
+- [ ] M08 `lod_switch_distance` 200, `ground.mode`=snap_to_terrain, `origin_y_m`=0, ASL 필드 없음, `generation.execution_code_in_package`=false
+- [ ] M09 `references` 4건 이상
 - [ ] M07 "V-World 풋프린트 참조" 같은 문구 없음, 공공누리 2유형을 "출처표시"라고 쓰지 않음
 
 ## 5. 사실·출처 (사람이 확인)
@@ -52,7 +56,7 @@
 - [ ] 보고서의 시간이 timing 파일과 같다
 
 ## 7. 제출
-- [ ] 블록마다 `check_report.json`이 폴더에 있다(제출 직전 실행값)
+- [ ] 블록마다 `reports/<폴더명>_check.json`이 있다(제출 직전 실행값, 블록 폴더 안이 아님)
 - [ ] `REPORT.md`를 채웠다
 - [ ] PR 본문 표에 삼각형·용량·접지·출처 URL이 있다(3AI 자동 점검용)
 - [ ] 자기 폴더 밖 파일을 건드리지 않았다
