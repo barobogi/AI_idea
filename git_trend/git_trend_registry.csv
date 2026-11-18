@@ -6,3 +6,6 @@ issue_date,trend_id,repo_name,github_url,stars_today,architecture_summary,pdf_fi
 2026-11-18,1118_Git_trend_#1,dream-num/univer,https://github.com/dream-num/univer,"29,758 stars (API 실측)","인간과 AI 에이전트를 위한 풀스택 오픈소스 오피스 SDK (캔버스 가상화 렌더러, Facade API, 헤드리스 런타임)",1118_Git_trend_#1_univer_v2.pdf
 2026-11-18,1118_Git_trend_#2,ag-ui-protocol/ag-ui,https://github.com/ag-ui-protocol/ag-ui,"20,259 stars (API 실측)","AI 에이전트와 프론트엔드 연결 오픈 표준 프로토콜 (31개 이벤트, 8대 패밀리, RFC 6902 JSON Patch)",1118_Git_trend_#2_ag_ui_v2.pdf
 2026-11-18,1118_Git_trend_#3,backnotprop/plannotator,https://github.com/backnotprop/plannotator,"13,246 stars (API 실측)","코딩 에이전트 제어, 문서 주석, 코드 리뷰 및 피드백 전송 휴먼인더루프 로컬 워크스페이스 (MCP 연동)",1118_Git_trend_#3_plannotator_v2.pdf
+2026-11-18,1118_Git_trend_#1,dream-num/univer,https://github.com/dream-num/univer,"29,758 stars (API 실측)","인간과 AI 에이전트를 위한 풀스택 오픈소스 오피스 SDK (캔버스 가상화 렌더러, Facade API, 헤드리스 런타임)",1118_Git_trend_#1_univer_v2.pdf
+2026-11-18,1118_Git_trend_#2,ag-ui-protocol/ag-ui,https://github.com/ag-ui-protocol/ag-ui,"20,259 stars (API 실측)","AI 에이전트와 프론트엔드 연결 오픈 표준 프로토콜 (31개 이벤트, 8대 패밀리, RFC 6902 JSON Patch)",1118_Git_trend_#2_ag_ui_v2.pdf
+2026-11-18,1118_Git_trend_#3,backnotprop/plannotator,https://github.com/backnotprop/plannotator,"13,246 stars (API 실측)","코딩 에이전트 제어, 문서 주석, 코드 리뷰 및 피드백 전송 휴먼인더루프 로컬 워크스페이스 (MCP 연동)",1118_Git_trend_#3_plannotator_v2.pdf
