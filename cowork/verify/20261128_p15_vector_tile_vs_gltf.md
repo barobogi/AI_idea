@@ -51,7 +51,7 @@
 ## 4. 전국 규모 혼합 구성 (문서에 있는 경우)
 
 - 이번에 읽은 문서 어디에도 "fill-extrusion + glTF 블록을 한 장면에 섞는" 공식 구성 설명을 찾지 못했다 (?). MapLibre와 three.js는 각각 별도 렌더러라 화면 합성은 문서가 아니라 구현 과제(두 엔진 간 카메라 동기 등)가 된다.
-- 프로젝트 배경(기존 검토 기준): 현재 사이트는 PMTiles + MapLibre fill-extrusion 구성이고, Muse 검수(PR #160, F4)에서 정밀 3D 화면에 대한 fill-extrusion→Three.js 전환 제안이 나온 상태다. 즉 "도심 원경은 fill-extrusion, 광진 등 주요 구는 glTF 블록"으로 역할을 나누는 방향은 이미 검토 이력에 있고, 본 문서는 그 판단의 문서 근거 자료다.
+- 프로젝트 배경(만복 세톡 id 765 열람 반영): 만복이 공개 페이지(b/11110 종로 HTML)를 열어 확인한 결과 three.min.js만 있고 maplibre·pmtiles 문자열이 없다 — 현재 공개 구조는 three.js glTF 블록이다. 초기 프로토타입(2026-11-17)은 PMTiles + MapLibre fill-extrusion 구성이었고(내부 기록), Muse 검수(PR #160, F4)의 fill-extrusion→Three.js 전환 제안이 이후 반영된 것으로 보인다 (전환 커밋 자체는 미확인 (?)). 본 문서는 "도심 원경 extrusion vs 주요 구 glTF" 등 역할 분리 판단의 문서 근거 자료로 쓴다.
 - (?) 혼합 시 카메라 동기·로딩 순서·라이트 일관성은 문서 근거가 없어 안티 구현 지시서 단계에서 실측이 필요하다.
 
 ## 5. 긴장점·미확인 (?)
